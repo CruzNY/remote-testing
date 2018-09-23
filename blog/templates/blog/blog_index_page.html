@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title%}{{ page.title }} {% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="content">
+      <div class="intro">{{ page.intro|richtext }}</div>
+      <br/>
+      <!--
+      <div class="field is-grouped">
+	<div class="control">
+	  <label class="label" for="">Sort By</label>
+	  <div class="select">
+            <select id="" name="">
+              <option value="">sort</option>
+              <option value=""></option>
+            </select>
+	  </div>
+	</div>	
+	<div class="control">
+	  <label class="label" for="">Filter By  </label>
+	  <div class="select">
+            <select id="" name="">
+              <option value="">filter</option>
+              <option value=""></option>
+            </select>
+	  </div>
+	</div>
+      </div>
+      -->
+      {% for post in page.get_children reversed %}
+      {% with post=post.specific %}
+      <div class="box"> 
+	<article class="media">
+	  <div class="media-content">
+	    <h2 class="title"><a href="{% pageurl post %}">{{ forloop.counter }}. {{ post.title }}</a></h2>
+	    <p class="subtitle is-6">Author: {{post.specific.author}} <br/> {{post.specific.date}}</p>
+	    <p>{{ post.intro|richtext }}</p>
+	  </div>
+	  <div class="media-right">
+	    <div class="content">
+	      <span></span>
+	      {% with post.main_image as main_image %}
+	      {% if main_image %}
+	      <figure class="image">{% image main_image width-400 height-200 %}</figure>
+	      {% endif %}
+	      {% endwith %}
+	    </div>
+	  </div>
+	</article>
+      </div>
+      {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

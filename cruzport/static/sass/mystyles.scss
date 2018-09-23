@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+// Colors
+$slate: #2471A3;
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$tan: #f7a291;
+$grey: #919290;
+
+// Update Bulma's global variables
+//$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$info: $purple;
+$link: $purple;
+$primary: $pink;
+
+// Bulma Component Variables
+$body-background-color: $beige-lighter;
+$table-background-color: $beige-lighter;
+$footer-background-color: $grey-light;
+$navbar-background-color: $beige-lighter;
+//$navbar-item-active-background-color: $pink;
+$navbar-item-hover-background-color: $grey;
+//$box-background-color: $grey-light;
+//My Imports
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/form.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/footer.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/table.sass";
+@import "../node_modules/bulma/sass/components/media.sass";
+@import "../node_modules/bulma/sass/elements/content.sass";
+@import "../node_modules/bulma/sass/elements/box.sass";
+@import "../node_modules/bulma/sass/components/message.sass";
+@import "../node_modules/bulma/sass/elements/other.sass";

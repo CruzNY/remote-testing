@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block title%}CruzPort | {{ page.title }} {% endblock %}
+{% block body_class %}template-projectpage{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container">
+    <h2 class="title">{{ page.title }}</h2>
+    <h3 class="subtitle">Published: {{ page.date }}
+      <br/>
+      Author: {{ page.owner }}
+    </h3>
+    <div class="box">
+    {{ page.body|richtext }}
+    <br/>
+    {% for item in page.gallery_images.all %}
+    <div>
+      <figure class="image"> {% image item.image max-1280x1280 %}</figure>
+    </div>
+    {% endfor %}
+    </div>
+    <br/>
+    <a href="{{ page.get_parent.url }}">Return to Blog Index</a>
+  </div>
+</section>
+{% endblock %}
+

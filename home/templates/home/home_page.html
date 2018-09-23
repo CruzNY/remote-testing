@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block title%}CruzPort | Home {% endblock %}
+{% block content %}
+{% load staticfiles %}
+<section class="hero is-link has-text-centered is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-2">Welcome to CruzPort</h1>
+      <h2 class="subtitle is-4">My personal portfolio powered by <a href="http://Bulma.io">Bulma</a> and <a href="http://djangoproject.com">Django</a></h2>
+    </div><!-- end of container -->
+  </div><!-- end of hero body -->
+</section><!-- end of hero section -->
+<section class="section">
+  <div class="container">
+    <article class="message is-link">
+      <div class="message-header">
+	<p>Cruz Port Announcement</p>
+	<a class="delete" href=""></a>
+      </div>
+      <div class="message-body">
+	{{page.homePageMessage|richtext}}
+      </div>
+    </article>
+    <div class="field has-text-centered">
+      <img style="border-radius:50%" alt="Picture of Alexis Cruz, Creator of CruzPort" src="{% static 'linkedIn.jpeg' %}"/>
+      <br/>
+      <br/>
+      <h2 class="subtitle">Alexis Cruz</h2>
+      <a class="button is-primary" href="{% static 'Alexis_Cruz_Resume.pdf' %}">Resum&eacute; &nbsp;<i class="far fa-file-pdf"></i></a>
+      <a class="button is-info" href="mailto:mr.alexiscruz@gmail.com">Email&nbsp;<i class="fas fa-envelope"></i></a>
+    </div><!-- End of field -->
+  </div><!-- End of container -->
+</section><!-- End of section -->
+<section class="section has-text-centered">
+  <div class="content">
+          {{page.aboutMe|richtext}}
+	  {{page.aboutThisPage|richtext}}
+    {{ page.body|richtext }}
+  </div>
+</section>
+{% endblock %}
